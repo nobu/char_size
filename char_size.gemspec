@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^#{spec.bindir}/}) { |f| File.basename(f) }
+  spec.extensions    = ["ext/char_size/extconf.rb"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.14"
@@ -25,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "rake-compiler", "~> 1.0"
 end
