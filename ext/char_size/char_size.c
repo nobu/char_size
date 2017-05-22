@@ -21,7 +21,7 @@ static VALUE min(VALUE class, VALUE encoding_or_name) {
 /*
  * Gets the maximum character size (in bytes) for an encoding.
  * @param encoding_or_name [Encoding, String] the encoding or its name
- * @return [Integer] the minimum character size
+ * @return [Integer] the maximum character size
  * @example
  *   CharSize.max("UTF-8")         # => 6
  *   CharSize.max(Encoding::UTF_8) # => 6
