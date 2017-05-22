@@ -1,5 +1,6 @@
 # CharSize
 
+[![Gem Version](https://badge.fury.io/rb/char_size.svg)](http://github.com/haines/char_size/releases)
 [![Build Status](https://travis-ci.org/haines/char_size.svg?branch=master)](https://travis-ci.org/haines/char_size)
 [![Code Climate](https://codeclimate.com/github/haines/char_size/badges/gpa.svg)](https://codeclimate.com/github/haines/char_size)
 

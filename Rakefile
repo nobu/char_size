@@ -3,6 +3,7 @@
 require "bundler/gem_tasks"
 require "rake/extensiontask"
 require "rake/testtask"
+require "yard"
 
 CLEAN.include "lib/char_size/char_size.bundle"
 
@@ -14,5 +15,7 @@ Rake::TestTask.new :test do |t|
   t.test_files = FileList["test/**/*_test.rb"]
   t.warning = true
 end
+
+YARD::Rake::YardocTask.new
 
 task :default => [:compile, :test]
