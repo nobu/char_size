@@ -1,11 +1,5 @@
 #include <char_size.h>
 
-static rb_encoding* find_encoding(VALUE encoding_or_name) {
-  rb_encoding* encoding = rb_find_encoding(encoding_or_name);
-  if (encoding == NULL) rb_raise(rb_eArgError, "unknown encoding name - %"PRIsVALUE, encoding_or_name);
-  return encoding;
-}
-
 /*
  * Gets the minimum character size (in bytes) for an encoding.
  * @param encoding_or_name [Encoding, String] the encoding or its name
@@ -15,7 +9,8 @@ static rb_encoding* find_encoding(VALUE encoding_or_name) {
  *   CharSize.min(Encoding::UTF_8) # => 1
  */
 static VALUE min(VALUE class, VALUE encoding_or_name) {
-  return INT2NUM(ONIGENC_MBC_MINLEN(find_encoding(encoding_or_name)));
+  rb_encoding *enc = rb_to_encoding(encoding_or_name);
+  return INT2NUM(ONIGENC_MBC_MINLEN(enc));
 }
 
 /*
@@ -27,7 +22,8 @@ static VALUE min(VALUE class, VALUE encoding_or_name) {
  *   CharSize.max(Encoding::UTF_8) # => 6
  */
 static VALUE max(VALUE class, VALUE encoding_or_name) {
-  return INT2NUM(ONIGENC_MBC_MAXLEN(find_encoding(encoding_or_name)));
+  rb_encoding *enc = rb_to_encoding(encoding_or_name);
+  return INT2NUM(ONIGENC_MBC_MAXLEN(enc));
 }
 
 void Init_char_size() {
