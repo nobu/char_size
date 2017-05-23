@@ -27,7 +27,7 @@ static VALUE max(VALUE class, VALUE encoding_or_name)
     return INT2NUM(ONIGENC_MBC_MAXLEN(rb_to_encoding(encoding_or_name)));
 }
 
-void Init_char_size()
+void Init_char_size(void)
 {
     VALUE CharSize = rb_define_module("CharSize");
     rb_define_singleton_method(CharSize, "min", min, 1);
