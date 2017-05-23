@@ -5,7 +5,7 @@ require "rake/extensiontask"
 require "rake/testtask"
 require "yard"
 
-CLEAN.include "lib/char_size/char_size."+RbConfig::CONFIG["DLEXT"]
+CLEAN.include("lib/char_size/char_size.#{RbConfig::CONFIG['DLEXT']}")
 
 Rake::ExtensionTask.new :char_size, Bundler::GemHelper.gemspec do |ext|
   ext.lib_dir = "lib/char_size"
