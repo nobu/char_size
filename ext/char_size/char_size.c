@@ -1,4 +1,5 @@
-#include <char_size.h>
+#include <ruby.h>
+#include <ruby/encoding.h>
 
 /*
  * Gets the minimum character size (in bytes) for an encoding.
