@@ -3,6 +3,6 @@
 
 require "bundler/setup"
 require "pry"
-require "char_size"
+require "encoding/char_size"
 
 Pry.start

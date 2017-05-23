@@ -2,4 +2,4 @@
 
 require "mkmf"
 
-create_makefile "char_size/char_size"
+create_makefile "encoding/char_size"

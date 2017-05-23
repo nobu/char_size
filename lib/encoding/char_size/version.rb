@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module CharSize
+module Encoding::CharSize
   VERSION = "0.2.0"
 end
